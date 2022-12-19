@@ -51,6 +51,7 @@ class Mover {
     this.velocity.add(this.acceleration);
     this.position.add(this.velocity);
     this.acceleration.mult(0);
+    
   }
   display() {
     stroke(0);
@@ -112,8 +113,8 @@ class Attractor {
     let d = dist(mx, my, this.position.x, this.position.y);
     if (d < this.mass) {
       this.dragging = true;
-      this.dragOffset.x = this.position.x - mx;
-      this.dragOffset.y = this.position.y - my;
+      this.dragOffset.x = this.position.x - mx*3;
+      this.dragOffset.y = this.position.y - my*3;
     }
   }
   handleHover(mx, my) {
