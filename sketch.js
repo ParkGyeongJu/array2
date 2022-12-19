@@ -39,8 +39,8 @@ function mouseReleased() {
 class Mover {
   constructor(mass, x, y) {
     this.position = createVector(x, y);
-    this.velocity = createVector(1, 0);
-    this.acceleration = createVector(0, 0);
+    this.velocity = createVector(1, 1);
+    this.acceleration = createVector(1, 1);
     this.mass = mass;
   }
   applyForce(force) {
@@ -79,7 +79,7 @@ class Attractor {
   constructor() {
     this.position = createVector(width / 2, height / 2);
     this.mass = 20;
-    this.G = 1;
+    this.G = 2;
     this.dragOffset = createVector(0, 0);
     this.dragging = false;
     this.rollover = false;
@@ -97,10 +97,10 @@ class Attractor {
 
   display() {
     ellipseMode(CENTER);
-    strokeWeight(4);
+    strokeWeight(1);
     stroke(0);
     if (this.dragging) {
-      fill(255);
+      fill(100, 200, 150);
     } else if (this.rollover) {
       fill(175);
     } else {
