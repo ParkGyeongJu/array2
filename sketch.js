@@ -11,7 +11,7 @@ function setup() {
 }
 
 function draw() {
-  background(50);
+  //background(50);
 
   attractor.display();
 
@@ -54,9 +54,11 @@ class Mover {
   }
   display() {
     stroke(0);
-    strokeWeight(2);
-    fill(255, 175);
+    strokeWeight(1);
+    fill(this.position.x/2, this.position.y, this.position.x);
     ellipse(this.position.x, this.position.y, this.mass * 16, this.mass * 16);
+    rect(this.position.x/1.5, this.position.y*1.5, this.mass * 16, this.mass * 16);
+    line(320,180,this.position.x, this.position.y);
   }
 
   checkEdges() {
@@ -134,3 +136,4 @@ class Attractor {
     }
   }
 }
+
